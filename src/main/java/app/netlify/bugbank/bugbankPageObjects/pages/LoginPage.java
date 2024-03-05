@@ -39,7 +39,7 @@ public class LoginPage {
     return this;
   }
 
-  public LoginPage loginCandidato(String email, String senha){
+  public LoginPage loginUsuario(String email, String senha){
     LoginPage loginPage = new LoginPage(driver)
         .preencherEmail(email)
         .preencherSenha(senha)

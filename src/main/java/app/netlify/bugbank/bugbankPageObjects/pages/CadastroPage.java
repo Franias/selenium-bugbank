@@ -49,6 +49,12 @@ public class CadastroPage {
   @FindBy(name = "//button[text()='Cadastrar']") //não consegui aplicar na função
   WebElement botaoCadastrar;
 
+  @FindBy(id = "modalText")
+  WebElement numeroDaConta;
+
+  @FindBy(xpath = "//a[text()=\"x\"]")
+  WebElement xDaModal;
+
   public void acessarCadastro(){
     this.botaoRegistrar.click();
   }
@@ -77,7 +83,10 @@ public class CadastroPage {
     espera.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[text()='Cadastrar']"))).click();
   }
 
-
+  public void fecharModal() {
+    espera.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()=\"x\"]")));
+    xDaModal.click();
+  }
   public CadastroPage cadastrarUsuario(String email, String nome, String senha){
     CadastroPage cadastroPage = new CadastroPage(driver);
         acessarCadastro();
@@ -87,6 +96,7 @@ public class CadastroPage {
         preencherConfirmacaoSenha(senha);
         adicionarSaldo();
         finalizarCadastro();
+        fecharModal();
     return new CadastroPage(driver);
   }
 

@@ -22,7 +22,7 @@ public class AcessoNegadoPageTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         AcessoNegadoPage acessoNegadoPage = new AcessoNegadoPage(driver);
 
-        loginPage.loginCandidato(loginTestData.getEmail(), loginTestData.getSenha());
+        loginPage.loginUsuario(loginTestData.getEmail(), loginTestData.getSenha());
 
         assertTrue(acessoNegadoPage.isModalAcessoNegadoVisivel(loginTestData.getTextoAcessoNegado()));
     }

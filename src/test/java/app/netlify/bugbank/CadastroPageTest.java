@@ -13,15 +13,14 @@ public class CadastroPageTest extends BaseTest {
 
   private final WebDriver driver = getDriver();
 
+  CadastroPage cadastroPage = new CadastroPage(driver);
+
   @Test
   @DisplayName("Deve cadastrar usuario")
   void deveCadastrarUsuario(){
     CadastroTestData cadastroTestData = new CadastroTestData();
-    CadastroPage cadastroPage = new CadastroPage(driver);
+    this.cadastroPage.cadastrarUsuario(cadastroTestData.getEmail(), cadastroTestData.getNome(), cadastroTestData.getSenha());
 
-    cadastroPage.cadastrarUsuario(cadastroTestData.getEmail(), cadastroTestData.getNome(), cadastroTestData.getSenha());
   }
-
-
 
 }
