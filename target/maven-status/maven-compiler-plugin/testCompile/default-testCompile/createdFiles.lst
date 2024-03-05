@@ -1,0 +1,4 @@
+app\netlify\bugbank\TransacaoPageTest.class
+app\netlify\bugbank\LoginComSucessoPageTest.class
+app\netlify\bugbank\CadastroPageTest.class
+app\netlify\bugbank\AcessoNegadoPageTest.class

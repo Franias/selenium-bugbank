@@ -1,0 +1,9 @@
+app\netlify\bugbank\utils\BaseTest.class
+app\netlify\bugbank\testData\CadastroTestData.class
+app\netlify\bugbank\bugbankPageObjects\pages\CadastroPage.class
+app\netlify\bugbank\bugbankPageObjects\pages\LoginPage.class
+app\netlify\bugbank\bugbankPageObjects\pages\HomePage.class
+app\netlify\bugbank\testData\LoginTestData.class
+app\netlify\bugbank\bugbankPageObjects\pages\TransacaoPage.class
+app\netlify\bugbank\bugbankPageObjects\pages\AcessoNegadoPage.class
+utils\DriverManager.class
