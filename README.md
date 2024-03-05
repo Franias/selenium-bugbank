@@ -10,7 +10,7 @@ O objetivo deste projeto é criar testes automatizados que simulem o comportamen
 
 Antes de começar, certifique-se de que você tenha as seguintes dependências instaladas em seu ambiente de desenvolvimento:
 
-- Java Development Kit (JDK) 11: [JDK11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+- Java Development Kit (JDK) 11: [JDK19](https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html)
 - Maven: [Instalar Maven](https://maven.apache.org/install.html)
 
 Certifique-se também de ter um navegador web instalado em seu sistema para que o Selenium possa interagir com ele durante a execução dos testes.
@@ -26,10 +26,10 @@ Certifique-se também de ter um navegador web instalado em seu sistema para que 
 2. Navegue até o diretório raiz do projeto:
 
    ```bash
-   cd projetoSelenium3
+   cd ..
    ```
 
-3. Compile o projeto e baixe as dependências usando o Gradle:
+3. Compile o projeto e baixe as dependências usando o Maven:
 
    ```bash
    mvn install
