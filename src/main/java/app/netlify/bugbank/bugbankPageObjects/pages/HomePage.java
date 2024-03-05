@@ -1,5 +1,6 @@
 package app.netlify.bugbank.bugbankPageObjects.pages;
 
+import app.netlify.bugbank.testData.CadastroTestData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,10 +15,14 @@ public class HomePage {
     PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10),this);
   }
 
+  @FindBy(id = "btnExit")
+  WebElement botaoSair;
   @FindBy(xpath = "//p[@id='textAccountNumber']//span")
   WebElement stringDaConta;
 
-
+  public void sairDaHome(){
+    botaoSair.click();
+  }
   public String pegarNumeroDaConta(){
     return this.stringDaConta.getText().split("\\-")[0];
   }

@@ -36,7 +36,5 @@ public class LoginComSucessoPageTest extends BaseTest {
     cadastroTestData.numeroDaConta = numeroDaConta;
     String digitoDaConta = homePage.pegarDigitoDaConta();
     cadastroTestData.digitoDaConta = digitoDaConta;
-  System.out.println("digito da conta"+cadastroTestData.digitoDaConta);
-    System.out.println("numero da conta" +cadastroTestData.numeroDaConta);
   }
 }
