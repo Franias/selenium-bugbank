@@ -10,7 +10,7 @@ O objetivo deste projeto é criar testes automatizados que simulem o comportamen
 
 Antes de começar, certifique-se de que você tenha as seguintes dependências instaladas em seu ambiente de desenvolvimento:
 
-- Java Development Kit (JDK) 11: [JDK11](https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html)
+- Java Development Kit (JDK) 19: [JDK19](https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html)
 - Maven: [Instalar Maven](https://maven.apache.org/install.html)
 
 Certifique-se também de ter um navegador web instalado em seu sistema para que o Selenium possa interagir com ele durante a execução dos testes.
