@@ -36,7 +36,7 @@ Certifique-se também de ter um navegador web instalado em seu sistema para que 
    ```
 ## Executando os Testes
 
-Após a configuração do projeto, você pode executar os testes automatizados usando o seguinte comando Gradle:
+Após a configuração do projeto, você pode executar os testes automatizados usando o seguinte comando Maven:
 
 ```bash
 mvn test
