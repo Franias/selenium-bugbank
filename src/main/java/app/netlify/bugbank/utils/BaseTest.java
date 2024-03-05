@@ -15,6 +15,6 @@ public abstract class BaseTest extends utils.DriverManager {
 
     @AfterEach
     public void finish(){
-//        quitDriver();
+        quitDriver();
     }
 }

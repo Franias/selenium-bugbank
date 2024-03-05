@@ -15,8 +15,6 @@ public class LoginComSucessoPageTest extends BaseTest {
 
   private CadastroPage cadastroPage;
   private LoginPage loginPage;
-
-  private HomePage homePage;
   private CadastroTestData cadastroTestData;
 
   @BeforeEach
@@ -25,16 +23,11 @@ public class LoginComSucessoPageTest extends BaseTest {
     this.loginPage = new LoginPage(driver);
     this.cadastroPage = new CadastroPage(driver)
         .cadastrarUsuario(cadastroTestData.getEmail(), cadastroTestData.getNome(), cadastroTestData.getSenha());
-    this.homePage = new HomePage(driver);
   }
 
   @Test
-  @DisplayName("Deve logar o usuário com sucesso e guardar informação de conta")
+  @DisplayName("Deve logar o usuário com sucesso")
   public void deveLogarComSucesso(){
     loginPage.loginUsuario(cadastroTestData.getEmail(), cadastroTestData.getSenha());
-    String numeroDaConta = homePage.pegarNumeroDaConta();
-    cadastroTestData.numeroDaConta = numeroDaConta;
-    String digitoDaConta = homePage.pegarDigitoDaConta();
-    cadastroTestData.digitoDaConta = digitoDaConta;
   }
 }

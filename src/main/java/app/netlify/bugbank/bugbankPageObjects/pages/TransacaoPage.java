@@ -81,6 +81,4 @@ public class TransacaoPage {
     return textoModal.getText().equals("Transferencia realizada com sucesso");
   }
 
-
-
 }
