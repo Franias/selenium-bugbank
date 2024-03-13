@@ -1,4 +1,4 @@
-package utils;
+package app.netlify.bugbank.utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -6,9 +6,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class DriverManager {
-    private static WebDriver driver;
+    public static WebDriver driver = createDriver();
 
-    public static WebDriver getDriver(){
+    public static WebDriver createDriver(){
         if(driver == null){
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
@@ -19,7 +19,9 @@ public class DriverManager {
         }
         return driver;
     }
-
+    public static void setDriver(String URL) {
+        driver.get(URL);
+    }
     public static void quitDriver(){
         if (driver != null){
             driver.quit();

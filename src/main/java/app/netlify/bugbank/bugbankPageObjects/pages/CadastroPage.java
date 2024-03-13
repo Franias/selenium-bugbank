@@ -1,103 +1,58 @@
 package app.netlify.bugbank.bugbankPageObjects.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 
-public class CadastroPage {
-  private final WebDriver driver;
-  WebDriverWait espera;
+import static app.netlify.bugbank.utils.DriverManager.driver;
 
-  public CadastroPage(WebDriver driver) {
-    this.driver = driver;
-    this.espera = new WebDriverWait(driver, Duration.ofSeconds(10));
-    PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10),this);
-  }
+public class CadastroPage {
 
   @FindBy(xpath = "//button[text()='Registrar']")
+  protected
   WebElement botaoRegistrar;
 
   @FindBys({
       @FindBy(name = "email")
   })
+  protected
   List<WebElement> inputsEmail;
 
   @FindBy(name = "name")
+  protected
   WebElement inputNome;
 
   @FindBys({
       @FindBy(name = "password")
   })
+  protected
   List<WebElement> inputsSenha;
   @FindBy(name = "passwordConfirmation")
+  protected
   WebElement inputConfirmacaoSenha;
 
   @FindBy(id = "toggleAddBalance")
+  protected
   WebElement botaoSaldo;
 
-  @FindBy(name = "//button[text()='Cadastrar']") //não consegui aplicar na função
+  @FindBy(name = "//button[text()='Cadastrar']")
+  protected //não consegui aplicar na função
   WebElement botaoCadastrar;
 
   @FindBy(id = "modalText")
   WebElement numeroDaConta;
 
   @FindBy(xpath = "//a[text()=\"x\"]")
+  protected
   WebElement xDaModal;
 
-  public void acessarCadastro(){
-    this.botaoRegistrar.click();
-  }
-
-  public void preencherEmail(String email){
-    this.inputsEmail.get(1).sendKeys(email);
-  }
-
-  public void preencherNome(String nome){
-    this.inputNome.sendKeys(nome);
-  }
-
-  public void preencherSenha(String senha){
-    this.inputsSenha.get(1).sendKeys(senha);
-  }
-
-  public void preencherConfirmacaoSenha(String senha){
-    this.inputConfirmacaoSenha.sendKeys(senha);
-  }
-
-  public void adicionarSaldo(){
-    ((JavascriptExecutor) driver).executeScript("return arguments[0].click();", this.botaoSaldo);
-  }
-
-  public void finalizarCadastro(){
-    espera.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[text()='Cadastrar']"))).click();
-  }
-
-  public void fecharModal() {
-    espera.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()=\"x\"]")));
-    xDaModal.click();
-  }
-  public CadastroPage cadastrarUsuario(String email, String nome, String senha){
-    CadastroPage cadastroPage = new CadastroPage(driver);
-        acessarCadastro();
-        preencherEmail(email);
-        preencherNome(nome);
-        preencherSenha(senha);
-        preencherConfirmacaoSenha(senha);
-        adicionarSaldo();
-        finalizarCadastro();
-        fecharModal();
-    return new CadastroPage(driver);
+  public CadastroPage() {
+    PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10),this);
   }
 
 }

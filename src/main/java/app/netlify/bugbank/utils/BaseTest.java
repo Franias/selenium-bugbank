@@ -5,12 +5,12 @@ import org.junit.jupiter.api.BeforeEach;
 
 import java.io.IOException;
 
-public abstract class BaseTest extends utils.DriverManager {
+public abstract class BaseTest extends DriverManager {
     private static final String URL = "https://bugbank.netlify.app/";
 
     @BeforeEach
     public void setUp() throws IOException {
-        getDriver().get(URL);
+        createDriver().get(URL);
     }
 
     @AfterEach

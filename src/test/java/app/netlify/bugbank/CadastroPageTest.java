@@ -1,26 +1,22 @@
 package app.netlify.bugbank;
 
-import app.netlify.bugbank.bugbankPageObjects.pages.CadastroPage;
-import app.netlify.bugbank.bugbankPageObjects.pages.LoginPage;
-import app.netlify.bugbank.testData.CadastroTestData;
-import app.netlify.bugbank.testData.LoginTestData;
+import app.netlify.bugbank.action.CadastroAction;
+import app.netlify.bugbank.action.LoginAction;
 import app.netlify.bugbank.utils.BaseTest;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CadastroPageTest extends BaseTest {
 
-  private final WebDriver driver = getDriver();
-
-  CadastroPage cadastroPage = new CadastroPage(driver);
+  CadastroAction cadastroAction = new CadastroAction();
 
   @Test
-  @DisplayName("Deve cadastrar usuario")
-  void deveCadastrarUsuario(){
-    CadastroTestData cadastroTestData = new CadastroTestData();
-    this.cadastroPage.cadastrarUsuario(cadastroTestData.getEmail(), cadastroTestData.getNome(), cadastroTestData.getSenha());
-
+  @DisplayName("Deve logar com sucesso")
+  public void cadastrarComSucesso() {
+    cadastroAction.cadastrarUsuario("test@test.com.br", "Arnold", "123456");
   }
 
 }
