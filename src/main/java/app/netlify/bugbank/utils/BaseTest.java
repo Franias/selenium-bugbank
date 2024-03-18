@@ -5,16 +5,18 @@ import org.junit.jupiter.api.BeforeEach;
 
 import java.io.IOException;
 
-public abstract class BaseTest extends DriverManager {
+import static app.netlify.bugbank.utils.DriverManager.quitDriver;
+
+public abstract class BaseTest {
     private static final String URL = "https://bugbank.netlify.app/";
 
     @BeforeEach
     public void setUp() throws IOException {
-        createDriver().get(URL);
+        DriverManager.setDriver(URL);
     }
 
     @AfterEach
     public void finish(){
-        quitDriver();
+//        quitDriver();
     }
 }

@@ -1,6 +1,7 @@
 package app.netlify.bugbank.action;
 
 import app.netlify.bugbank.bugbankPageObjects.pages.CadastroPage;
+import app.netlify.bugbank.utils.EmailGenerator;
 import app.netlify.bugbank.utils.WaitElementTry;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -21,10 +22,11 @@ public class CadastroAction extends CadastroPage {
     WaitElementTry.waitElement(xDaModal,5000);
     xDaModal.click();
   }
-  public void cadastrarUsuario(){
+  public void cadastrarUsuario () {
     botaoRegistrar.click();
-    inputsEmail.get(1).sendKeys("email@email.com");
-    inputNome.sendKeys("nome");
+    EmailGenerator.gerarEmailAleatorio();
+    inputsEmail.get(1).sendKeys(EmailGenerator.getEmailAleatorio());
+    inputNome.sendKeys("Fulano");
     inputsSenha.get(1).sendKeys("senha");
     inputConfirmacaoSenha.sendKeys("senha");
     ((JavascriptExecutor) driver).executeScript("return arguments[0].click();", botaoSaldo);

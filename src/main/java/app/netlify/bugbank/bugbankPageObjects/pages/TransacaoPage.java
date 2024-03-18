@@ -10,75 +10,32 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class TransacaoPage {
-  private final WebDriver driver;
-  WebDriverWait espera;
+import static app.netlify.bugbank.utils.DriverManager.driver;
 
-  public TransacaoPage(WebDriver driver) {
-    this.driver = driver;
-    this.espera = new WebDriverWait(driver, Duration.ofSeconds(10));
-    PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10),this);
-  }
+public class TransacaoPage {
 
   @FindBy(id = "btn-TRANSFERÊNCIA")
-  WebElement botaoTransferencia;
+  protected WebElement botaoTransferencia;
 
   @FindBy(name = "accountNumber")
-  WebElement inputNumeroDaConta;
+  protected WebElement inputNumeroDaConta;
 
   @FindBy(name = "digit")
-  WebElement inputDigitoDaConta;
+  protected WebElement inputDigitoDaConta;
 
   @FindBy(name = "transferValue")
-  WebElement inputValor;
+  protected WebElement inputValor;
 
   @FindBy(name = "description")
-  WebElement inputDescricao;
+  protected WebElement inputDescricao;
 
   @FindBy(xpath = "//button[text()='Transferir agora']")
-  WebElement submitTranferir;
+  protected WebElement submitTranferir;
 
   @FindBy(id = "modalText")
-  WebElement textoModal;
+  protected WebElement textoModal;
 
-  public TransacaoPage acessarTransferencia(){
-    this.botaoTransferencia.click();return this;
+  public TransacaoPage() {
+    PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
   }
-
-  public TransacaoPage preencherNumeroDaConta(String numeroDaConta){
-    this.inputNumeroDaConta.sendKeys(numeroDaConta);return this;
-  }
-
-  public TransacaoPage preencherDigitoDaConta(String digitoDaConta){
-    this.inputDigitoDaConta.sendKeys(digitoDaConta);return this;
-  }
-
-  public TransacaoPage preencherValor(String valor){
-    this.inputValor.sendKeys(valor);return this;
-  }
-
-  public TransacaoPage preencherDescricao(){
-    this.inputDescricao.sendKeys("Descricao");return this;
-  }
-
-  public TransacaoPage transferirValor(){
-    this.submitTranferir.click();return this;
-  }
-
-  public TransacaoPage transacao(String numeroDaConta, String digitoDaConta, String valor){
-    TransacaoPage transacaoPage = new TransacaoPage(driver)
-        .acessarTransferencia()
-        .preencherNumeroDaConta(numeroDaConta)
-        .preencherDigitoDaConta(digitoDaConta)
-        .preencherValor(valor)
-        .preencherDescricao()
-        .transferirValor();
-    return new TransacaoPage(driver);
-  }
-
-  public boolean isTransferenciaRealizadaComSucesso(){
-    espera.until(ExpectedConditions.visibilityOf(textoModal));
-    return textoModal.getText().equals("Transferencia realizada com sucesso");
-  }
-
 }

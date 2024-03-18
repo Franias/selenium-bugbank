@@ -25,10 +25,6 @@ Certifique-se também de ter um navegador web instalado em seu sistema para que 
 
 2. Navegue até o diretório raiz do projeto:
 
-   ```bash
-   cd projetoSelenium3
-   ```
-
 3. Compile o projeto e baixe as dependências usando o Gradle:
 
    ```bash

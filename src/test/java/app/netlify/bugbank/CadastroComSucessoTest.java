@@ -1,15 +1,13 @@
 package app.netlify.bugbank;
 
 import app.netlify.bugbank.action.CadastroAction;
-import app.netlify.bugbank.action.LoginAction;
 import app.netlify.bugbank.utils.BaseTest;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class CadastroPageTest extends BaseTest {
+public class CadastroComSucessoTest extends BaseTest {
 
   CadastroAction cadastroAction = new CadastroAction();
 
