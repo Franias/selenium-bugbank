@@ -11,12 +11,12 @@ public abstract class BaseTest {
     private static final String URL = "https://bugbank.netlify.app/";
 
     @BeforeEach
-    public void setUp() throws IOException {
+    public void setUp() {
         DriverManager.setDriver(URL);
     }
 
     @AfterEach
     public void finish(){
-//        quitDriver();
+        quitDriver();
     }
 }
