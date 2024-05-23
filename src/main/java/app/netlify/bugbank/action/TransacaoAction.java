@@ -7,7 +7,6 @@ public class TransacaoAction extends TransacaoPage {
 
   HomeAction homeAction = new HomeAction();
 
-
   public TransacaoPage acessarTransferencia(){
     this.botaoTransferencia.click();return this;
   }

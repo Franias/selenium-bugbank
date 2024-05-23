@@ -19,13 +19,17 @@ public class DriverManager {
         }
         return driver;
     }
+
     public static void setDriver(String URL) {
         driver.get(URL);
     }
+
     public static void quitDriver(){
         if (driver != null){
             driver.quit();
             driver = null;
         }
+
     }
+
 }

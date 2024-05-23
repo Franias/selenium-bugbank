@@ -3,7 +3,6 @@ package app.netlify.bugbank.action;
 import app.netlify.bugbank.bugbankPageObjects.pages.LoginPage;
 import app.netlify.bugbank.utils.EmailGenerator;
 
-
 public class LoginAction extends LoginPage {
   public void preencherEmail(String email){
     inputEmail.sendKeys(email);
@@ -20,9 +19,11 @@ public class LoginAction extends LoginPage {
     preencherSenha(senha);
     entrarUsuario();
   }
+
   public void logarUsuario(){
     preencherEmail(EmailGenerator.getEmailAleatorio());
     preencherSenha("senha");
     entrarUsuario();
   }
+
 }

@@ -5,7 +5,6 @@ import java.util.Random;
 public class EmailGenerator {
     private static final String domain = "@test.com";
     private static final Random random = new Random();
-
     private static String emailAleatorio;
 
     private static String generateRandomEmail(String name) {
@@ -24,4 +23,5 @@ public class EmailGenerator {
     public static String getEmailAleatorio(){
         return emailAleatorio;
     }
+
 }

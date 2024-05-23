@@ -7,7 +7,6 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import static app.netlify.bugbank.utils.DriverManager.driver;
 
-
 public class LoginPage {
 
   @FindBy(name = "email")
@@ -21,7 +20,6 @@ public class LoginPage {
   @FindBy(xpath = "//button[text()='Acessar']")
   protected
   WebElement botaoAcessar;
-
 
   public LoginPage() {
     PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10),this);

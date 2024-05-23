@@ -3,7 +3,6 @@ package app.netlify.bugbank.action;
 import app.netlify.bugbank.bugbankPageObjects.pages.CadastroPage;
 import app.netlify.bugbank.utils.EmailGenerator;
 import app.netlify.bugbank.utils.WaitElementTry;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
 import static app.netlify.bugbank.utils.DriverManager.driver;
@@ -22,6 +21,7 @@ public class CadastroAction extends CadastroPage {
     WaitElementTry.waitElement(xDaModal,5000);
     xDaModal.click();
   }
+
   public void cadastrarUsuario () {
     botaoRegistrar.click();
     EmailGenerator.gerarEmailAleatorio();

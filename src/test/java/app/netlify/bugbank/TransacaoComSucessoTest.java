@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class TransacaoComSucessoTest extends BaseTest {
-
   LoginAction loginAction = new LoginAction();
   CadastroAction cadastroAction = new CadastroAction();
   HomeAction homeAction = new HomeAction();
